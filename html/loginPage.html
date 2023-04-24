@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+  </head>
+  <body>
+    <h1>Login Form</h1>
+    <form id="login-form" onsubmit="login(event)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Login">
+    </form>
+    <br>
+    <div id="token-display" style="display: none;">
+      <h2>Authentication Successful!</h2>
+      <p>Token: <span id="token"></span></p>
+    </div>
+    <script>
+      function login(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        fetch('http://127.0.0.1:8080/authenticate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Authentication failed');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const token = data.token;
+          document.getElementById('token').innerText = token;
+          document.getElementById('token-display').style.display = 'block';
+          document.getElementById('login-form').style.display = 'none';
+        })
+        .catch(error => {
+          console.error(error);
+          alert('Authentication failed');
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <!-- Example HTML form -->
+<form id="myForm">
+  <!-- <label for="name">Name:</label>
+  <input type="text" id="name" name="name" value="John Doe"> -->
+
+  <!-- <label for="email">Email:</label>
+  <input type="email" id="email" name="email" value="johndoe@example.com"> -->
+
+  <label for="name">username</label>
+  <input type="text" id="username" name="username" >
+  <label for="password">password:</label>
+  <input type="text" id="password" >
+
+  <!-- <label for="age">Age:</label>
+  <input type="number" id="age" name="age" value="30"> -->
+  
+  <input type="button" value="Submit" onclick="submitForm()">
+</form>
+<!-- 
+<script>
+  function submitForm() {
+    const form = document.getElementById('myForm'); // Get the form element
+    
+    const formData = new FormData(form); // Get the form data
+    
+    const jsonData = JSON.stringify(Object.fromEntries(formData)); // Convert form data to JSON
+    
+    // Send the JSON data to your URL using an HTTP POST request
+    fetch('http://127.0.0.1:8080/authenticate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+  }
+</script>
+ -->
+<script>
+  function submitForm() {
+  const form = document.getElementById('myForm'); // Get the form element
+  // Get the form data as an object
+  const formData = new FormData(form); // Get the form data
+//const formData = {
+//   username: document.getElementById('username').value,
+//   password: document.getElementById('password').value
+// };
+
+const jsonData = JSON.stringify(Object.fromEntries(formData)); // Convert form data to JSON
+
+// Send the form data to the backend server
+fetch('http://127.0.0.1:8080/authenticate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(formData)
+})
+.then(response => response.json())
+.then(data => {
+  // Do something with the response from the server
+})
+.catch(error => {
+  console.error('Error sending login request:', error);
+});
+  }
+  </script>
+
+
+</body>
+</html>

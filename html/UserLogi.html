@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Login">
+    </form>
+    <div id="login-error" style="display:none;color:red;">Invalid username or password</div>
+    <script>
+      const loginForm = document.getElementById('login-form');
+      loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const response = await fetch('https://localhost:8080/authenticate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        if (response.ok) {
+          const data = await response.json();
+          // redirect to the appropriate page or display a success message
+        } else {
+          const errorDiv = document.getElementById('login-error');
+          errorDiv.style.display = 'block';
+        }
+      });
+    </script>
+  </body>
+</html>

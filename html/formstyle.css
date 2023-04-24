@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 15px;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container{
+          background-color: rgb(187, 226, 231);
+          padding: 10px 20px 15px 20px;
+          border: 10px solid blanchedalmond;
+          border-radius: 12px;
+}
+
+
+
+input [type="text"] {
+    background-color: rgb(14, 156, 14);
+    padding: 50px;
+}
+
+
+
+input {type ="text"},
+input {type="email"} ,
+input {type="checkbox"}",
+input {type="password"},
+textarea, 
+select {
+    width: 100px;
+    
+}
+
+
+
+--input type="date",
+input type="datetime-local",
+input type="email",
+input type="file",
+input type="hidden",
+input type="month",
+input type="color",
+input type="range",
+input type="reset",
+input type="search",
+input type="url",
+input type="button",
+input type="number",
+input type="submit",
+{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid snow;
+    border-radius: 7px;
+}

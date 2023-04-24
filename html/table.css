@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+table{
+    border: 3px solid green;
+    width: 600PX;
+    height: 350px;
+    text-align: center;
+    margin-top: 70px;
+   margin-left: 25%;
+   
+}
+h1{
+    text-align: center;
+    background: yellow;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+td,th:hover{
+    background:aliceblue;
+    color: red;
+    cursor: pointer;
+}
+tr:hover{
+   
+    transform: scale(1.02);
+}
+td:hover{
+    background: rgb(219, 158, 219);
+    color: white;
+}
