@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Action</title>
+    <style>
+        .class img{
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Bulb Action ON & OFF</h2>
+    <img id="bulb" src="bulbOff.gif" alt="bulb off">
+    <button onclick="document.getElementById('bulb').src='bulbOn.gif' " style="background-color: rgb(19, 148, 14);color: white; width: 100px;height: 25px;border-radius: 10px;">BulbOn</button>
+    <button onclick="document.getElementById('bulb').src='bulbOff.gif'" style="background-color: rgb(182, 35, 25);color: white; width: 100px;height: 25px;border-radius: 10px;">BulbOff</button>
+    <div>
+        <h2>Clock Checking</h2>
+        <p>Set Time And Create Start And Stop</p>
+        <button onclick="clearInterval(myVar)" style="background-color: red;color: white; width: 100px;height: 25px;border-radius: 10px;">Stop Clock</button>
+        <button onclick="setInterval(myTime,1000,start)" style="background-color: green;color: white;width: 100px;height: 25px;border-radius: 10px;">Start Clock</button>
+        <p id="box"></p>
+        
+        <script>
+            function myTime()
+            {
+                const d=new Date();
+                document.querySelector("#box").innerHTML=d.toLocaleTimeString();
+            }
+           let myVar=setInterval(myTime,1000);
+           
+           
+           
+           let start=clearInterval();
+          
+        </script>
+        
+        
+    </div>
+    <div >
+        <img src="images\image5.jpg" >
+    </div>
+
+</body>
+</html>

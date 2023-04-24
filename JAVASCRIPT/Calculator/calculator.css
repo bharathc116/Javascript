@@ -1,0 +1,34 @@
+*{
+    margin: auto;
+}
+.container{
+    text-align: center;
+    margin-top: 50px;
+
+
+}
+input{
+    font-size: 30px;
+    border: 1px solid blue;
+    width: 260px;
+}
+button{
+    width: 60px;
+    height: 50px;
+    background-color: rgb(183, 231, 231);
+    font-size: 30px;
+    transition: 0.1ms;
+
+}
+button:hover{
+    background: crimson;
+    color: white;
+}
+
+.calculator{
+    background-color: rgb(93, 122, 219);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+   
+}
